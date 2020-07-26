@@ -74,7 +74,7 @@ class StartPage(tk.Frame):
         self.start_button.config(state=tk.DISABLED)
         self.stop_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.DISABLED)
-		self.replay_button.config(state=tk.DISABLED)
+        self.replay_button.config(state=tk.DISABLED)
         smartphone.start_record(self)
 
     def stop_record(self):
@@ -108,7 +108,7 @@ class StartPage(tk.Frame):
         self.stop_button.config(state=tk.DISABLED)
         self.start_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.NORMAL)
-		self.replay_button.config(state=tk.NORMAL)
+        self.replay_button.config(state=tk.NORMAL)
 
 
     def choose_record(self):
