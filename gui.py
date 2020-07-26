@@ -64,18 +64,18 @@ class StartPage(tk.Frame):
 
     def start_record(self):
         try:
-            smartphone = self.smartphones[self.listbox.index(self.listbox.curselection())]
+            self.smartphone = self.smartphones[self.listbox.index(self.listbox.curselection())]
         except:
             show_error("please choose a smartphone")
             return
-        if smartphone.get_status() == "unauthorized":
+        if self.smartphone.get_status() == "unauthorized":
             show_error("device unauthorized\nplease accept the RSA-key on the smartphone")
             return
         self.start_button.config(state=tk.DISABLED)
         self.stop_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.DISABLED)
         self.replay_button.config(state=tk.DISABLED)
-        smartphone.start_record(self)
+        self.smartphone.start_record(self)
 
     def stop_record(self):
         self.window = tk.Toplevel(self)
@@ -104,7 +104,7 @@ class StartPage(tk.Frame):
             show_error("title is already taken")
             return
         self.window.destroy()
-        self.smartphones[self.listbox.index(self.listbox.curselection())].stop_record(record_title)
+        self.smartphone.stop_record(record_title)
         self.stop_button.config(state=tk.DISABLED)
         self.start_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.NORMAL)
