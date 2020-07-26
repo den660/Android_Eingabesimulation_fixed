@@ -79,7 +79,7 @@ class Smartphone:
         for input in inputs:
             #time.sleep(input.delay / 1000)
             for event in input.events:
-                subprocess.run("adb -s " + self.id + " shell sendevent /dev/input/event" + str(event.device) +" "+ str(event.type) +" "+ str(event.code) +" "+ str(event.value))
+                subprocess.run("platform-tools/adb -s " + self.id + " shell sendevent /dev/input/event" + str(event.device) +" "+ str(event.type) +" "+ str(event.code) +" "+ str(event.value))
                 print(str(event_counter) + "/" + str(all_events))
                 event_counter += 1
 
@@ -94,7 +94,7 @@ class Smartphone:
             start = time.time()
             input_counter = 0
             line_buffer = []
-            self.proc = subprocess.Popen("adb -s " + self.id + " shell getevent", stdout=subprocess.PIPE)
+            self.proc = subprocess.Popen("platform-tools/adb -s " + self.id + " shell getevent", stdout=subprocess.PIPE)
             for line in iter(self.proc.stdout.readline, b""):
 
                 line = line.decode("utf-8").replace("\r","").replace("\n","")

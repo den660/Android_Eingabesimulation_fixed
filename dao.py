@@ -133,6 +133,5 @@ class MySQLDAO():
 if __name__ == '__main__':
     dao = MySQLDAO()
     dao.connect()
-    dao.create_database()
     dao.create_tables()
     dao.close_connection()

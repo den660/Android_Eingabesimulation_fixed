@@ -52,8 +52,8 @@ class StartPage(tk.Frame):
         self.start_button.pack()
         self.stop_button = tk.Button(self, text="Stop Record", command=self.stop_record, state=tk.DISABLED)
         self.stop_button.pack()
-        replay_button = tk.Button(self, text="Replay Record", command=lambda: self.choose_record())
-        replay_button.pack()
+        self.replay_button = tk.Button(self, text="Replay Record", command=lambda: self.choose_record())
+        self.replay_button.pack()
         self.text_box = tk.Text(self)
         self.text_box.pack()
 
@@ -74,6 +74,7 @@ class StartPage(tk.Frame):
         self.start_button.config(state=tk.DISABLED)
         self.stop_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.DISABLED)
+		self.replay_button.config(state=tk.DISABLED)
         smartphone.start_record(self)
 
     def stop_record(self):
@@ -107,6 +108,7 @@ class StartPage(tk.Frame):
         self.stop_button.config(state=tk.DISABLED)
         self.start_button.config(state=tk.NORMAL)
         self.listbox.config(state=tk.NORMAL)
+		self.replay_button.config(state=tk.NORMAL)
 
 
     def choose_record(self):
