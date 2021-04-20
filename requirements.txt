@@ -13,7 +13,7 @@ libusb1==1.8
 mysql-connector==2.2.9
 packaging==20.4
 pure-python-adb==0.2.6.dev0
-py==1.9.0
+py==1.10.0
 pyasn1==0.4.8
 pycparser==2.20
 pyelftools==0.26
